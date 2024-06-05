@@ -177,10 +177,26 @@ function extractSliceThicknessFromDataset(dataSet) {
   return sliceThickness;
 }
 
+/**
+ * Extract the spacingBetweenSlices information.
+ * @param {*} dataSet
+ * @returns
+ */
+function extractSpacingBetweenSlicesFromDataset(dataSet) {
+  let spacingBetweenSlices;
+
+  if (dataSet.elements.x00180050) {
+    spacingBetweenSlices = dataSet.floatString('00180088');
+  }
+
+  return spacingBetweenSlices;
+}
+
 export {
   getImageTypeSubItemFromDataset,
   extractOrientationFromDataset,
   extractPositionFromDataset,
   extractSpacingFromDataset,
   extractSliceThicknessFromDataset,
+  extractSpacingBetweenSlicesFromDataset
 };

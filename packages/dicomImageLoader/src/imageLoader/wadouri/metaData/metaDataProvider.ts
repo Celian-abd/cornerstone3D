@@ -14,6 +14,7 @@ import {
   extractPositionFromDataset,
   extractSpacingFromDataset,
   extractSliceThicknessFromDataset,
+  extractSpacingBetweenSlicesFromDataset,
 } from './extractPositioningFromDataset';
 import isNMReconstructable from '../../isNMReconstructable';
 import {
@@ -120,6 +121,7 @@ function metaDataProvider(type, imageId) {
       imageOrientationPatient: extractOrientationFromDataset(dataSet),
       imagePositionPatient: extractPositionFromDataset(dataSet),
       sliceThickness: extractSliceThicknessFromDataset(dataSet),
+      spacingBetweenSlices: extractSpacingBetweenSlicesFromDataset(dataSet),
       pixelSpacing: extractSpacingFromDataset(dataSet),
       numberOfFrames: dataSet.uint16('x00280008'),
       isNMReconstructable:
